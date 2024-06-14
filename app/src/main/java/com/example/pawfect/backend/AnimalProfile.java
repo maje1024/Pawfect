@@ -1,10 +1,9 @@
-import java.util.Date;
 import java.util.UUID;
 
 // Tierprofil
 public class AnimalProfile {
     private UUID animalId;
-    private UUID userId;
+    private UserProfile userId;
     private String name;
     private int age;
     private Gender gender;

@@ -19,8 +19,8 @@ public class AnimalProfile {
     // Getter und Setter
     public UUID getAnimalId() { return animalId; }
     public void setAnimalId(UUID animalId) { this.animalId = animalId; }
-    public UUID getUserId() { return userId; }
-    public void setUserId(UUID userId) { this.userId = userId; }
+    public UserProfile getUserId() { return userId; }
+    public void setUserId(UserProfile userId) { this.userId = userId; }
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
     public int getAge() { return age; }

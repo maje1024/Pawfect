@@ -1,3 +1,5 @@
+package com.example.pawfect.backend;
+
 import java.util.UUID;
 
 // Tierprofil

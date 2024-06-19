@@ -1,13 +1,25 @@
-package com.example.pawfect.backend;
+package com.example.pawfect.models;
+
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+import androidx.room.TypeConverters;
+import com.example.pawfect.utils.UUIDConverter;
 
 import java.util.Date;
 import java.util.UUID;
 
-// Likes
+@Entity(tableName = "likes")
 public class Like {
+    @PrimaryKey
+    @TypeConverters(UUIDConverter.class)
     private UUID likeId;
+
+    @TypeConverters(UUIDConverter.class)
     private UUID likerAnimalId;
+
+    @TypeConverters(UUIDConverter.class)
     private UUID likeeAnimalId;
+
     private Date date;
 
     // Getter und Setter

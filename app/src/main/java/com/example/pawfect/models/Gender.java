@@ -1,4 +1,4 @@
-package com.example.pawfect.backend;
+package com.example.pawfect.models;
 
 // Enum für Geschlecht
 public enum Gender {

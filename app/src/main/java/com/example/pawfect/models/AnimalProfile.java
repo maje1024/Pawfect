@@ -1,11 +1,22 @@
-package com.example.pawfect.backend;
+package com.example.pawfect.models;
+
+import android.content.Intent;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+import androidx.room.TypeConverters;
+import com.example.pawfect.utils.UUIDConverter;
 
 import java.util.UUID;
 
-// Tierprofil
+@Entity(tableName = "animal_profiles")
 public class AnimalProfile {
+    @PrimaryKey
+    @TypeConverters(UUIDConverter.class)
     private UUID animalId;
+
+    @TypeConverters(UUIDConverter.class)
     private UserProfile userId;
+
     private String name;
     private int age;
     private Gender gender;

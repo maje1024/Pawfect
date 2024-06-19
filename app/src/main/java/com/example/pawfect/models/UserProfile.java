@@ -1,11 +1,19 @@
-package com.example.pawfect.backend;
+package com.example.pawfect.models;
+
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+import androidx.room.TypeConverters;
+import com.example.pawfect.utils.UUIDConverter;
 
 import java.util.Date;
 import java.util.UUID;
 
-// Nutzerprofil
+@Entity(tableName = "user_profiles")
 public class UserProfile {
+    @PrimaryKey
+    @TypeConverters(UUIDConverter.class)
     private UUID userId;
+
     private String firstName;
     private String lastName;
     private Date birthDate;

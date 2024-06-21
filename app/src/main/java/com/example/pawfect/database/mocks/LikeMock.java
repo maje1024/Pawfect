@@ -1,12 +1,9 @@
 package com.example.pawfect.database.mocks;
 
-import com.example.pawfect.entities.AnimalProfile;
 import com.example.pawfect.entities.Like;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.UUID;
 
 public abstract class LikeMock {
 

@@ -1,36 +1,43 @@
 package com.example.pawfect;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import com.example.pawfect.database.AppDatabase;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.example.pawfect.database.Pool;
+import com.example.pawfect.database.mocks.AnimalProfileMock;
+import com.example.pawfect.database.mocks.DislikeMock;
+import com.example.pawfect.database.mocks.LikeMock;
+import com.example.pawfect.database.mocks.MatchMock;
+import com.example.pawfect.database.mocks.UserProfileMock;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-import com.example.pawfect.databinding.ActivityMainBinding;
+
+import java.util.concurrent.ExecutorService;
 
 public class MainActivity extends AppCompatActivity {
+    private AppDatabase datenbank;
+    private final ExecutorService pool;
 
-    private ActivityMainBinding binding;
-    private AppDatabase appDatabase;
-
+    public MainActivity() {
+        pool = Pool.getThreadPool();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        datenbank = AppDatabase.getDatabase(this);
 
-        appDatabase = AppDatabase.getInstance(this);
-
-        BottomNavigationView navView = findViewById(R.id.nav_view);
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
-                .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(binding.navView, navController);
+        initializeDatabase();
     }
 
+    @SuppressLint("NewApi")
+    public void initializeDatabase() {
+        pool.submit(() -> {
+            AnimalProfileMock.getAnimalProfiles().forEach(animalProfile -> datenbank.animalProfileDao().save(animalProfile));
+            DislikeMock.getDislikes().forEach(dislike -> datenbank.dislikeDao().save(dislike));
+            LikeMock.getLikes().forEach(like -> datenbank.likeDao().save(like));
+            MatchMock.getLikes().forEach(match -> datenbank.matchDao().save(match));
+            UserProfileMock.getUserProfiles().forEach(userProfile -> datenbank.userProfileDao().save(userProfile));
+        });
+    }
 }

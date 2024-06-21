@@ -1,7 +1,6 @@
 package com.example.pawfect.database.mocks;
 
 import com.example.pawfect.entities.Dislike;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;

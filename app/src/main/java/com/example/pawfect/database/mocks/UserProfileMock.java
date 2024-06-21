@@ -5,7 +5,6 @@ import com.example.pawfect.entities.UserProfile;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.UUID;
 
 public abstract class UserProfileMock {
 

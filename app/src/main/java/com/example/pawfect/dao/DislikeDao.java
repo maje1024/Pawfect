@@ -14,15 +14,15 @@ import java.util.UUID;
 @Dao
 public interface DislikeDao {
 
-    @Query("SELECT * FROM dislike WHERE dislike_id = :id LIMIT 1")
+    @Query("SELECT * FROM dislikes WHERE dislikeId = :id LIMIT 1")
     LiveData<Dislike> findById(final int id);
 
-    @Query("SELECT * FROM  dislike")
+    @Query("SELECT * FROM  dislikes")
     LiveData<List<Dislike>> findAll();
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void save(final  Dislike  dislike);
 
-    @Query("DELETE FROM  dislike WHERE dislike_id = :id")
+    @Query("DELETE FROM  dislikes WHERE dislikeId = :id")
     void delete(final int id);
 }

@@ -13,15 +13,15 @@ import java.util.UUID;
 @Dao
 public interface MatchDao {
 
-    @Query("SELECT * FROM match WHERE match_id = :id LIMIT 1")
+    @Query("SELECT * FROM matches WHERE matchId = :id LIMIT 1")
     LiveData<Match> findById(final int id);
 
-    @Query("SELECT * FROM match")
+    @Query("SELECT * FROM matches")
     LiveData<List<Match>> findAll();
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void save(final Match match);
 
-    @Query("DELETE FROM match WHERE match_id = :id")
+    @Query("DELETE FROM matches WHERE matchId = :id")
     void delete(final int id);
 }

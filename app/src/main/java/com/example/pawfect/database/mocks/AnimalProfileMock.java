@@ -3,7 +3,6 @@ package com.example.pawfect.database.mocks;
 import com.example.pawfect.entities.AnimalProfile;
 import com.example.pawfect.entities.Gender;
 import com.example.pawfect.entities.Intent;
-
 import java.util.ArrayList;
 import java.util.List;
 

@@ -14,15 +14,15 @@ import java.util.UUID;
 @Dao
 public interface UserProfileDao {
 
-    @Query("SELECT * FROM user_profile WHERE userProfile_id = :id LIMIT 1")
+    @Query("SELECT * FROM user_profiles WHERE userProfileId = :id LIMIT 1")
     LiveData<UserProfile> findById(final int id);
 
-    @Query("SELECT * FROM  user_profile")
+    @Query("SELECT * FROM  user_profiles")
     LiveData<List< UserProfile>> findAll();
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void save(final  UserProfile  userProfile);
 
-    @Query("DELETE FROM  user_profile WHERE userProfile_id = :id")
+    @Query("DELETE FROM  user_profiles WHERE userProfileId = :id")
     void delete(final int id);
 }

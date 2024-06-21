@@ -1,34 +1,54 @@
 package com.example.pawfect.models;
 
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 import androidx.room.TypeConverters;
-import com.example.pawfect.utils.UUIDConverter;
 
 import java.util.Date;
-import java.util.UUID;
 
-@Entity(tableName = "likes")
+@Entity(tableName = "dislike")
 public class Like {
+    @ColumnInfo(name = "dislikeId")
     @PrimaryKey
-    @TypeConverters(UUIDConverter.class)
-    private UUID likeId;
-
-    @TypeConverters(UUIDConverter.class)
-    private UUID likerAnimalId;
-
-    @TypeConverters(UUIDConverter.class)
-    private UUID likeeAnimalId;
-
+    private int likeId;
+    @ColumnInfo(name = "dislikerAnimalId")
+    private int likerAnimalId;
+    @ColumnInfo(name = "dislikeeAnimalId")
+    private int likeeAnimalId;
+    @ColumnInfo(name = "date")
     private Date date;
 
+    public Like() {}
+
+    public Like(
+            int likeId,
+            int likerAnimalId,
+            int likeeAnimalId,
+            Date date) {
+        this.likeId = likeId;
+        this.likerAnimalId = likerAnimalId;
+        this.likeeAnimalId = likeeAnimalId;
+        this.date = date;
+    }
+
     // Getter und Setter
-    public UUID getLikeId() { return likeId; }
-    public void setLikeId(UUID likeId) { this.likeId = likeId; }
-    public UUID getLikerAnimalId() { return likerAnimalId; }
-    public void setLikerAnimalId(UUID likerAnimalId) { this.likerAnimalId = likerAnimalId; }
-    public UUID getLikeeAnimalId() { return likeeAnimalId; }
-    public void setLikeeAnimalId(UUID likeeAnimalId) { this.likeeAnimalId = likeeAnimalId; }
+    public int getLikeId() { return likeId; }
+    public void setLikeId(int likeId) { this.likeId = likeId; }
+    public int getLikerAnimalId() { return likerAnimalId; }
+    public void setLikerAnimalId(int likerAnimalId) { this.likerAnimalId = likerAnimalId; }
+    public int getLikeeAnimalId() { return likeeAnimalId; }
+    public void setLikeeAnimalId(int likeeAnimalId) { this.likeeAnimalId = likeeAnimalId; }
     public Date getDate() { return date; }
     public void setDate(Date date) { this.date = date; }
+
+    @Override
+    public String toString() {
+        return "Like{" +
+                "likeId=" + likeId +
+                ", likerAnimalId=" + likerAnimalId +
+                ", likeeAnimalId=" + likeeAnimalId +
+                ", date=" + date +
+                '}';
+    }
 }

@@ -1,31 +1,36 @@
 package com.example.pawfect.models;
 
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-import androidx.room.TypeConverters;
-import com.example.pawfect.utils.UUIDConverter;
 
 import java.util.Date;
-import java.util.UUID;
 
-@Entity(tableName = "user_profiles")
+@Entity(tableName = "user_profile")
 public class UserProfile {
+    @ColumnInfo(name = "animalProfileId")
     @PrimaryKey
-    @TypeConverters(UUIDConverter.class)
-    private UUID userId;
-
+    private int userProfilId;
+    @ColumnInfo(name = "firstName")
     private String firstName;
+    @ColumnInfo(name = "lastName")
     private String lastName;
+    @ColumnInfo(name = "birthDate")
     private Date birthDate;
+    @ColumnInfo(name = "email")
     private String email;
+    @ColumnInfo(name = "password")
     private String password;
+    @ColumnInfo(name = "isPremium")
     private boolean isPremium;
+    @ColumnInfo(name = "swipesLeft")
     private int swipesLeft;
+    @ColumnInfo(name = "address")
     private String address;
 
     // Getter und Setter
-    public UUID getUserId() { return userId; }
-    public void setUserId(UUID userId) { this.userId = userId; }
+    public int getUserProfilId() { return userProfilId; }
+    public void setUserProfilId(int userProfilId) { this.userProfilId = userProfilId; }
     public String getFirstName() { return firstName; }
     public void setFirstName(String firstName) { this.firstName = firstName; }
     public String getLastName() { return lastName; }
@@ -42,4 +47,19 @@ public class UserProfile {
     public void setSwipesLeft(int swipesLeft) { this.swipesLeft = swipesLeft; }
     public String getAddress() { return address; }
     public void setAddress(String address) { this.address = address; }
+
+    @Override
+    public String toString() {
+        return "UserProfile{" +
+                "userProfilId=" + userProfilId +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", birthDate=" + birthDate +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", isPremium=" + isPremium +
+                ", swipesLeft=" + swipesLeft +
+                ", address='" + address + '\'' +
+                '}';
+    }
 }

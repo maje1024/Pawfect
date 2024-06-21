@@ -1,39 +1,76 @@
 package com.example.pawfect.models;
 
 import android.content.Intent;
+import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 import androidx.room.TypeConverters;
-import com.example.pawfect.utils.UUIDConverter;
 
-import java.util.UUID;
-
-@Entity(tableName = "animal_profiles")
+@Entity(tableName = "animal_profile")
 public class AnimalProfile {
+    @ColumnInfo(name = "animalProfileId")
     @PrimaryKey
-    @TypeConverters(UUIDConverter.class)
-    private UUID animalId;
+    private int animalProfileId;
 
-    @TypeConverters(UUIDConverter.class)
-    private UserProfile userId;
+    @ColumnInfo(name = "userProfileId")
+    private int userProfileId;
 
+    @ColumnInfo(name = "name")
     private String name;
+    @ColumnInfo(name = "age")
     private int age;
+    @ColumnInfo(name = "gender")
     private Gender gender;
+    @ColumnInfo(name = "images")
     private String images;
+    @ColumnInfo(name = "species")
     private String species;
+    @ColumnInfo(name = "breed")
     private String breed;
+    @ColumnInfo(name = "characteristics")
     private String characteristics;
+    @ColumnInfo(name = "size")
     private double size;
+    @ColumnInfo(name = "weight")
     private double weight;
+    @ColumnInfo(name = "intent")
     private Intent intent;
+    @ColumnInfo(name = "description")
     private String description;
 
+    public AnimalProfile() {}
+
+    public AnimalProfile(
+            String name,
+            int age,
+            Gender gender,
+            String images,
+            String species,
+            String breed,
+            String characteristics,
+            double size,
+            double weight,
+            Intent intent,
+            String description) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.images = images;
+        this.species = species;
+        this.breed = breed;
+        this.characteristics = characteristics;
+        this.size = size;
+        this.weight = weight;
+        this.intent = intent;
+        this.description = description;
+    }
+
     // Getter und Setter
-    public UUID getAnimalId() { return animalId; }
-    public void setAnimalId(UUID animalId) { this.animalId = animalId; }
-    public UserProfile getUserId() { return userId; }
-    public void setUserId(UserProfile userId) { this.userId = userId; }
+    public int getAnimalId() { return animalProfileId; }
+    public void setAnimalId(int animalProfileId) { this.animalProfileId = animalProfileId; }
+    public int getUserId() { return userProfileId; }
+    public void setUserId(int userProfileId) { this.userProfileId = userProfileId; }
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
     public int getAge() { return age; }
@@ -56,4 +93,23 @@ public class AnimalProfile {
     public void setIntent(Intent intent) { this.intent = intent; }
     public String getDescription() { return description; }
     public void setDescription(String description) { this.description = description; }
+
+    @Override
+    public String toString() {
+        return "AnimalProfile{" +
+                "animalProfileId=" + animalProfileId +
+                ", userProfileId=" + userProfileId +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", gender=" + gender +
+                ", images='" + images + '\'' +
+                ", species='" + species + '\'' +
+                ", breed='" + breed + '\'' +
+                ", characteristics='" + characteristics + '\'' +
+                ", size=" + size +
+                ", weight=" + weight +
+                ", intent=" + intent +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }

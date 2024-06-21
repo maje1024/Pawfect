@@ -1,34 +1,53 @@
 package com.example.pawfect.models;
 
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-import androidx.room.TypeConverters;
-import com.example.pawfect.utils.UUIDConverter;
 
 import java.util.Date;
-import java.util.UUID;
 
-@Entity(tableName = "dislikes")
+@Entity(tableName = "dislike")
 public class Dislike {
+    @ColumnInfo(name = "dislikeId")
     @PrimaryKey
-    @TypeConverters(UUIDConverter.class)
-    private UUID dislikeId;
-
-    @TypeConverters(UUIDConverter.class)
-    private UUID dislikerAnimalId;
-
-    @TypeConverters(UUIDConverter.class)
-    private UUID dislikeeAnimalId;
-
+    private int dislikeId;
+    @ColumnInfo(name = "dislikerAnimalId")
+    private int dislikerAnimalId;
+    @ColumnInfo(name = "dislikeeAnimalId")
+    private int dislikeeAnimalId;
+    @ColumnInfo(name = "date")
     private Date date;
 
+    public Dislike() {}
+
+    public Dislike(
+            int dislikeId,
+            int dislikerAnimalId,
+            int dislikeeAnimalId,
+            Date date) {
+        this.dislikeId = dislikeId;
+        this.dislikerAnimalId = dislikerAnimalId;
+        this.dislikeeAnimalId = dislikeeAnimalId;
+        this.date = date;
+    }
+    
     // Getter und Setter
-    public UUID getDislikeId() { return dislikeId; }
-    public void setDislikeId(UUID dislikeId) { this.dislikeId = dislikeId; }
-    public UUID getDislikerAnimalId() { return dislikerAnimalId; }
-    public void setDislikerAnimalId(UUID dislikerAnimalId) { this.dislikerAnimalId = dislikerAnimalId; }
-    public UUID getDislikeeAnimalId() { return dislikeeAnimalId; }
-    public void setDislikeeAnimalId(UUID dislikeeAnimalId) { this.dislikeeAnimalId = dislikeeAnimalId; }
+    public int getDislikeId() { return dislikeId; }
+    public void setDislikeId(int dislikeId) { this.dislikeId = dislikeId; }
+    public int getDislikerAnimalId() { return dislikerAnimalId; }
+    public void setDislikerAnimalId(int dislikerAnimalId) { this.dislikerAnimalId = dislikerAnimalId; }
+    public int getDislikeeAnimalId() { return dislikeeAnimalId; }
+    public void setDislikeeAnimalId(int dislikeeAnimalId) { this.dislikeeAnimalId = dislikeeAnimalId; }
     public Date getDate() { return date; }
     public void setDate(Date date) { this.date = date; }
+
+    @Override
+    public String toString() {
+        return "Dislike{" +
+                "dislikeId=" + dislikeId +
+                ", dislikerAnimalId=" + dislikerAnimalId +
+                ", dislikeeAnimalId=" + dislikeeAnimalId +
+                ", date=" + date +
+                '}';
+    }
 }

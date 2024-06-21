@@ -1,0 +1,20 @@
+
+“
+java:S1104"PMake name a static final constant or non-public and provide accessors if needed.( şÍ¾8„õ•Ğƒ2J$1e4bba9f-7fc6-4354-85a1-cf726b614b97
+’
+java:S1104"OMake age a static final constant or non-public and provide accessors if needed.(×Áò¿8„õ•Ğƒ2J$65c40d80-09d9-4019-9c23-6edf3b9866ff
+•
+java:S1104"RMake images a static final constant or non-public and provide accessors if needed.(ÖÖéó8…õ•Ğƒ2J$cd0dc7ee-442e-46e0-98ca-eb07092234e0
+›
+java:S1104"SMake species a static final constant or non-public and provide accessors if needed.(õİó“ÿÿÿÿÿ8…õ•Ğƒ2J$7edb5309-aa35-4a99-902c-49bcd15056f2
+™
+java:S1104"QMake breed a static final constant or non-public and provide accessors if needed.(šÄçÛøÿÿÿÿ8…õ•Ğƒ2J$0749acb4-eb81-4b36-bdf4-097b52b12ac1
+
+java:S1104"[Make characteristics a static final constant or non-public and provide accessors if needed.(Ê÷® 8…õ•Ğƒ2J$86a82506-f23d-4fc6-ace3-620ee1d06729
+“
+java:S1104"PMake size a static final constant or non-public and provide accessors if needed.(íê¥8…õ•Ğƒ2J$06482c83-8624-46d0-b811-09937f2d0be5
+”
+java:S1104"RMake weight a static final constant or non-public and provide accessors if needed.(œŠ¾x8…õ•Ğƒ2J$a33740f0-16ad-46f1-b871-9073d03eb8ca
+Ÿ
+java:S1104!"WMake description a static final constant or non-public and provide accessors if needed.(¹ÿ†ğÿÿÿÿÿ8û±ğÏƒ2J$d04570e4-821a-4075-a0c5-54fb9e60c192
+‰	java:S107#"BConstructor has 13 parameters, which is greater than 7 authorized.(¬±ëüÿÿÿÿ8€²ğÏƒ2J$3462c693-ce68-42fe-84a4-ba719f4a5a30

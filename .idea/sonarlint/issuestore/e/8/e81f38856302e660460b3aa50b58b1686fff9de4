@@ -1,0 +1,18 @@
+
+
+java:S1104"UMake firstName a static final constant or non-public and provide accessors if needed.(ßæÆÑıÿÿÿÿ8’¢Ğƒ2J$353a4910-1968-42fb-b72e-44916a893250
+–
+java:S1104"TMake lastName a static final constant or non-public and provide accessors if needed.(¿ü8“¢Ğƒ2J$8aed5c47-6557-4e93-9650-2514b53c7929
+˜
+java:S1104"UMake birthDate a static final constant or non-public and provide accessors if needed.(ÛÈê8“¢Ğƒ2J$6716dcee-68f2-4a3b-b859-e9cd1e503d25
+™
+java:S1104"QMake email a static final constant or non-public and provide accessors if needed.(¾Æ†Ëıÿÿÿÿ8“¢Ğƒ2J$4c123b17-752c-451f-ab8f-6df2f4285915
+œ
+java:S1104"TMake password a static final constant or non-public and provide accessors if needed.(¼şòüÿÿÿÿ8“¢Ğƒ2J$814f1230-0a45-437e-bccd-00186483624a
+
+java:S1104"UMake isPremium a static final constant or non-public and provide accessors if needed.(øäÄÀşÿÿÿÿ8“¢Ğƒ2J$9b678880-3372-46ee-8a10-fb8755a57211
+
+java:S1104"VMake swipesLeft a static final constant or non-public and provide accessors if needed.(”×ú†üÿÿÿÿ8“¢Ğƒ2J$65197e66-74be-4838-9141-210eb4c8fad3
+›
+java:S1104"SMake address a static final constant or non-public and provide accessors if needed.(€ªµúÿÿÿÿÿ8“¢Ğƒ2J$d3c43a1d-e9c4-406f-968e-b135e4cc190b
+‚	java:S107"AConstructor has 9 parameters, which is greater than 7 authorized.(šÚ8—¢Ğƒ2J$22ca121b-a575-4cc2-8e92-8c7d7f25c741
